@@ -436,6 +436,8 @@ int changeVolume(HTTPClient *http, IPAddress targetSonos, int amount) {
         nextVolume = 100;
     }
 
+    delay(5); // short delay seems to help with latest (mid-2024) firmware update
+
     return setVolume(http, targetSonos, nextVolume);
 }
 
